@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑块导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(54, 52, 52);
+        }
+
+        ul {
+            position: relative;
+            top: 190px;
+            list-style: none;
+            width: 80%;
+            height: 80px;
+            border: lightgray 1px solid;
+            border-radius: 20px;
+            box-shadow: #000 0 0 10px 3px;
+            display: flex;
+            /* 平均发布对齐 */
+            justify-content: space-around;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        li {
+            position: relative;
+            width: 20%;
+            height: 80px;
+            cursor: pointer;
+            top: 20px;
+            font-size: 30px;
+            font-weight: 700;
+            color: lightgray;
+            text-shadow: snow 0 0 10px;  
+        }
+
+        .move {
+            position: absolute;
+            left: 0px;
+            border-radius: 20px;
+            background-color: rgb(105, 104, 104);
+            width: 20%;
+            height: 100%;
+            z-index: -1;
+            transition: all .6s ;
+        }
+
+        li:nth-child(2):hover~.move {
+            left: 20%;
+        }
+
+        li:nth-child(3):hover~.move {
+            left: 40%;
+        }
+        li:nth-child(4):hover~.move {
+            left:60%;
+        }
+        li:nth-child(5):hover~.move {
+            left:80%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li style="--i:0">首页</li>
+        <li style="--i:1">点赞</li>
+        <li style="--i:2">收藏</li>
+        <li style="--i:3">投币</li>
+        <li style="--i:4">关注</li>
+        <div class="move"></div>
+    </ul>
+</body>
+
+</html>
